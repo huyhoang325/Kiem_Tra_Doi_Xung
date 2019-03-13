@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Palindrome</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    var str = prompt("Nhap Chuoi: ")
+    var arrStr = str.split("");
+
+    document.write( 'Chuoi: "' + arrStr + '"  :' );
+    document.write( isPalindrome(arrStr) ? " Doi xung" : " Khong doi xung" );
+    function isPalindrome(arrStr){
+        if(arrStr.length < 2){
+            return true;
+        }
+        else if(arrStr[0] === arrStr[arrStr.length - 1]){
+            arrStr.pop();
+            arrStr.shift();
+            return isPalindrome(arrStr);
+        }
+        else return false;
+    }
+</script>
+</html>
